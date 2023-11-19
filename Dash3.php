@@ -100,7 +100,7 @@
                                             <label for="exampleInputEmail1">Zona </label>
 
                                             <select id="miSelect2" name="miSelect2" class="form-control" required>
-                        
+
                                             </select>
 
                                         </div>
@@ -114,187 +114,195 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-7">
+                    <section id="section-mostar" style="display:none;">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-7">
 
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Campos filtrados:</h6>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <h5> Fecha inicio: <span id="mostrarFechaInicio"></span></h5>
-                                        <h5> Fecha fin: <span id="mostrarFechaFin"></span></h5>
-                                        <h5> Zona: <span id="mostrarZona"></span></h5>
-                                        <h5> Agente: <span id="mostrarAgente"></span></h5>
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">Campos filtrados:</h6>
                                     </div>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-7">
-
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">TOTAL CARTAS GENERADAS</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-bar">
-                                        <div class="float-right form-group" style="margin-top: 10px;">
-                                            <label for="tipoGrafico" class="form-label"
-                                                style="margin-bottom: 5px; display: block;">Tipo de Gráfico:</label>
-                                            <select id="tipoGrafico" class="form-select"
-                                                aria-label="Default select example"
-                                                style="width: 150px; padding: 8px; border-radius: 5px;">
-                                                <option value="bar">Barra</option>
-                                                <option value="doughnut">Doughnut</option>
-                                                <option value="line">Línea</option>
-                                            </select>
-
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <h5> Fecha inicio: <span id="mostrarFechaInicio"></span></h5>
+                                            <h5> Fecha fin: <span id="mostrarFechaFin"></span></h5>
+                                            <h5> Zona: <span id="mostrarZona"></span></h5>
+                                            <h5> Agente: <span id="mostrarAgente"></span></h5>
                                         </div>
-
-                                        <canvas id="myBarChart2" style="width: 100%; max-width: 600px;">
-                                        </canvas>
-
-
                                     </div>
-
-                                    <hr>
 
                                 </div>
                             </div>
+                        </div>
 
-                            <div id="cartasPorUsuarioContainer"></div>
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-7">
 
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">TOTAL CARTAS GENERADAS</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-bar">
+                                            <div class="float-right form-group" style="margin-top: 10px;">
+                                                <label for="tipoGrafico" class="form-label"
+                                                    style="margin-bottom: 5px; display: block;">Tipo de Gráfico:</label>
+                                                <select id="tipoGrafico" class="form-select"
+                                                    aria-label="Default select example"
+                                                    style="width: 150px; padding: 8px; border-radius: 5px;">
+                                                    <option value="bar">Barra</option>
+                                                    <option value="doughnut">Doughnut</option>
+                                                    <option value="line">Línea</option>
+                                                </select>
 
-                            <!-- Content Row -->
-                            <div class="row">
-
-                                <!-- Earnings (Monthly) Card Example -->
-                                <div class="col-xl-3 col-md-6 mb-4">
-                                    <div class="card border-left-primary shadow h-100 py-2">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col mr-2">
-                                                    <div
-                                                        class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                        Total empresas cobro</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                </div>
                                             </div>
+
+                                            <canvas id="myBarChart2" style="width: 100%; max-width: 600px;">
+                                            </canvas>
+
+
                                         </div>
+
+                                        <hr>
+
                                     </div>
                                 </div>
 
-                                <!-- Earnings (Monthly) Card Example -->
-                                <div class="col-xl-3 col-md-6 mb-4">
-                                    <div class="card border-left-success shadow h-100 py-2">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col mr-2">
-                                                    <div
-                                                        class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                        Total cartera</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div id="cartasPorUsuarioContainer"></div>
 
-                                <!-- Earnings (Monthly) Card Example -->
-                                <div class="col-xl-3 col-md-6 mb-4">
-                                    <div class="card border-left-info shadow h-100 py-2">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col mr-2">
-                                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                        % Avance de Cobro
-                                                    </div>
-                                                    <div class="row no-gutters align-items-center">
-                                                        <div class="col-auto">
 
-                                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                                92.05%</div>
+                                <!-- Content Row -->
+                                <div class="row">
+                                    <!-- Earnings (Monthly) Card Example -->
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                                        <div class="card border-left-primary shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                            Total empresas cobro</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                                            id="totalEmpresasCobro">
+
                                                         </div>
-                                                        <div class="col">
-                                                            <div class="progress progress-sm mr-2">
-                                                                <div class="progress-bar bg-info" role="progressbar"
-                                                                    style="width:" aria-valuenow="50" aria-valuemin="0"
-                                                                    aria-valuemax="100"></div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Earnings (Monthly) Card Example -->
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                                        <div class="card border-left-success shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                            Total cartera</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                                            id="totalCartera">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Earnings (Monthly) Card Example -->
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                                        <div class="card border-left-info shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                            % Avance de Cobro
+                                                        </div>
+                                                        <div class="row no-gutters align-items-center">
+                                                            <div class="col-auto">
+                                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"
+                                                                    id="avanceCobro">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                                        aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <!-- Pending Requests Card Example -->
-                                <div class="col-xl-3 col-md-6 mb-4">
-                                    <div class="card border-left-warning shadow h-100 py-2">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col mr-2">
-                                                    <div
-                                                        class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                        Clientes impactados</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <div class="col-auto">
+                                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                                                     </div>
                                                 </div>
-                                                <div class="col-auto">
-                                                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pending Requests Card Example -->
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                                        <div class="card border-left-warning shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                            Clientes impactados</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                                            id="clientesImpactados">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
 
 
 
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">EMPRESAS CON MAS CARTERA:</h6>
-                                </div>
-
-                                <div class="card-body">
-                                    <!-- <h2>Gráfico de Barras</h2> -->
-                                    <label for="tipoGrafico">Selecciona el tipo de gráfico:</label>
-                                    <select id="tipoGrafico2" name="tipoGrafico2">
-                                        <option value="bar">Gráfico de Barras</option>
-                                        <option value="pie">Gráfico de Pastel</option>
-                                        <option value="line">Gráfico de Líneas</option>
-                                    </select>
-                            
-                                    <div class="chart-container">
-                                    <canvas id="graficoBarras" style="width: 100%; max-width: 600px;"></canvas>
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">EMPRESAS CON MAS CARTERA:</h6>
                                     </div>
-                                
+
+                                    <div class="card-body">
+                                        <!-- <h2>Gráfico de Barras</h2> -->
+                                        <label for="tipoGrafico">Selecciona el tipo de gráfico:</label>
+                                        <select id="tipoGrafico2" name="tipoGrafico2">
+                                            <option value="bar">Gráfico de Barras</option>
+                                            <option value="pie">Gráfico de Pastel</option>
+                                            <option value="line">Gráfico de Líneas</option>
+                                        </select>
+
+                                        <div class="chart-container">
+                                            <canvas id="graficoBarras" style="width: 100%; max-width: 600px;"></canvas>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
+
+
                         </div>
-
-
-                    </div>
+                    </section>
                     <!-- <div class="row">
                   <div class="col-xl-12 col-lg-7">
 

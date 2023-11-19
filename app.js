@@ -4,6 +4,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const urlGraficos = 'https://cartera.atlas.com.co/cobranza/php/api_cartas.php';
     const urlCartera = 'https://cartera.atlas.com.co/cobranza/php/api_total_cartas.php';
     const urlGraficosDos = 'https://cartera.atlas.com.co/cobranza/php/api_empresas.php';
+    const urlCobros = 'https://cartera.atlas.com.co/cobranza/php/api_cobro.php';
+
+    let mostarDom = document.getElementById("section-mostar")
+
+    let boton = document.getElementById("crearpdf");
+
+    let nav2 = document.getElementById("accordionSidebar");
+
+
+    boton.addEventListener("click", event => {
+        event.preventDefault();
+        boton.style.display = "none";
+        nav2.style.display = "none";
+
+        var css = '@page { size: 45cm 35.7cm; }',
+            head = document.head || document.getElementsByTagName('head')[0],
+            style = document.createElement('style');
+
+        style.type = 'text/css';
+        style.media = 'print';
+
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+
+        head.appendChild(style);
+        window.print();
+    }, false);
+
+
 
 
     var fecha_inicioGlobal;
@@ -84,6 +116,11 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         hacerPeticion();
 
+
+
+        mostarDom.style.display = "block"
+
+
         let fecha_inicio = document.getElementById('fecha').value;
         let fecha_fin = document.getElementById('fecha2').value;
         let agente = document.getElementById('miSelect').value
@@ -115,6 +152,43 @@ document.addEventListener('DOMContentLoaded', function () {
         formData2.append('zone', zonaGlobal); //zona todas
         formData2.append('fecha_ini', fecha_inicioGlobal); // 2023-10-01
         formData2.append('fecha_fin', fecha_finGlobal); //    2023-11-03
+
+
+
+
+        //COBROS -------------------
+
+
+
+        fetch(urlCobros, {
+            method: 'POST',
+            body: formData2
+        })
+            .then(response => response.json())
+            .then(data => {
+
+
+                console.log('cobros Respuesta del servidor:', data);
+                // Puedes realizar acciones adicionales con los datos aquí
+                document.getElementById("totalEmpresasCobro").innerHTML = data.total_empresas_cobro
+                document.getElementById("totalCartera").innerHTML = data.total_cartera
+                document.getElementById("avanceCobro").innerHTML = data.avance_cobro
+                document.getElementById("clientesImpactados").innerHTML = data.clientes_impactados
+
+            })
+            .catch(error => {
+                console.error('Error al realizar la solicitud:', error);
+            });
+
+
+
+
+        //COBRO0S--------------------
+
+
+
+
+
 
         fetch(urlGraficos, {
             method: 'POST',
@@ -269,7 +343,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
         // ULTIMA PETICION CON GRAFICOS
 
         async function hacerPeticion() {
@@ -286,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const data = await response.json();
                 console.log('FUNCIONA---------', data);
 
-                
+
 
                 const labelsEjemplo2 = data.map(item => item.Name_C);
                 const valuesEjemplo2 = data.map(item => item.Importe_pen);
@@ -295,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 tipoGrafico2.addEventListener('change', function () {
                     const selectedType = tipoGrafico2.value;
-            
+
                     if (selectedType === "bar" || selectedType === "line" || selectedType === "pie") {
                         renderizarGrafico2(labelsEjemplo2, valuesEjemplo2, selectedType);
                     } else {
@@ -303,14 +376,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
 
-           
+
 
             } catch (error) {
                 console.error('Error:', error);
             }
         }
-
-
     });
 
 
@@ -396,6 +467,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+
 
 
 
