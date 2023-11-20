@@ -69,10 +69,10 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 var zonasArray = data.zone.split(',');
 
-                var todasOption = document.createElement("option");
-                todasOption.value = "Todas";
-                todasOption.textContent = "Todas";
-                selectZonas.appendChild(todasOption);
+                // var todasOption = document.createElement("option");
+                // todasOption.value = "Todas";
+                // todasOption.textContent = "Todas";
+                // selectZonas.appendChild(todasOption);
 
                 zonasArray.forEach(function (zona) {
                     var option = document.createElement("option");
